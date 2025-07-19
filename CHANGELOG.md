@@ -1,3 +1,3 @@
 # Changelog
 
-All notable changes to `langgraph-platform-php` will be documented in this file.
+All notable changes to `langgraph-client-php` will be documented in this file.
