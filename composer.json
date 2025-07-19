@@ -41,8 +41,7 @@
     },
     "autoload": {
         "psr-4": {
-            "LangGraphPlatform\\": "src/",
-            "LangGraphPlatform\\Database\\Factories\\": "database/factories/"
+            "LangGraphPlatform\\": "src/"
         }
     },
     "autoload-dev": {
