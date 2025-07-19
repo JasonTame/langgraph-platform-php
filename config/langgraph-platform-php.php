@@ -1,6 +1,4 @@
 <?php
 
-// config for Jason Tame/LanggraphPlatform
-return [
-
-];
+// config for LanggraphPlatform
+return [];

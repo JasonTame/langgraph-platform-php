@@ -1,10 +1,10 @@
 <?php
 
-namespace Jason Tame\LanggraphPlatform;
+namespace LanggraphPlatform;
 
+use LanggraphPlatform\Commands\LanggraphPlatformCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Jason Tame\LanggraphPlatform\Commands\LanggraphPlatformCommand;
 
 class LanggraphPlatformServiceProvider extends PackageServiceProvider
 {

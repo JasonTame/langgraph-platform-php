@@ -1,6 +1,6 @@
 <?php
 
-namespace Jason Tame\LanggraphPlatform\Commands;
+namespace LanggraphPlatform\Commands;
 
 use Illuminate\Console\Command;
 

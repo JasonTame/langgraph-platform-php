@@ -16,12 +16,12 @@
     backupStaticProperties="false"
 >
     <testsuites>
-        <testsuite name="Jason Tame Test Suite">
+        <testsuite name="Langgraph Platform Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
     <logging>
-        <junit outputFile="build/report.junit.xml"/>
+        <junit outputFile="build/report.junit.xml" />
     </logging>
     <source>
         <include>

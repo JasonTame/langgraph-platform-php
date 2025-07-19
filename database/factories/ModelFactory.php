@@ -1,6 +1,6 @@
 <?php
 
-namespace Jason Tame\LanggraphPlatform\Database\Factories;
+namespace LanggraphPlatform\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

@@ -1,5 +1,5 @@
 <?php
 
-use Jason Tame\LanggraphPlatform\Tests\TestCase;
+use LanggraphPlatform\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

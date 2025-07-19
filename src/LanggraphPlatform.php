@@ -1,5 +1,5 @@
 <?php
 
-namespace Jason Tame\LanggraphPlatform;
+namespace LanggraphPlatform;
 
 class LanggraphPlatform {}

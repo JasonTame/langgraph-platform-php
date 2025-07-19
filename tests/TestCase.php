@@ -1,10 +1,10 @@
 <?php
 
-namespace Jason Tame\LanggraphPlatform\Tests;
+namespace LanggraphPlatform\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use LanggraphPlatform\LanggraphPlatformServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Jason Tame\LanggraphPlatform\LanggraphPlatformServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Jason Tame\\LanggraphPlatform\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'LanggraphPlatform\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
