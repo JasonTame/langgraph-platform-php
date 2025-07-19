@@ -44,7 +44,7 @@ php artisan vendor:publish --tag="langgraph-platform-php-views"
 ## Usage
 
 ```php
-$langgraphPlatform = new Jason Tame\LanggraphPlatform();
+$langgraphPlatform = new Jason Tame\LangGraphPlatform();
 echo $langgraphPlatform->echoPhrase('Hello, Jason Tame!');
 ```
 

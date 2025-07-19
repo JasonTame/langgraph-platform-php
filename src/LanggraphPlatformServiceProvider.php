@@ -1,12 +1,12 @@
 <?php
 
-namespace LanggraphPlatform;
+namespace LangGraphPlatform;
 
-use LanggraphPlatform\Commands\LanggraphPlatformCommand;
+use LangGraphPlatform\Commands\LangGraphPlatformCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class LanggraphPlatformServiceProvider extends PackageServiceProvider
+class LangGraphPlatformServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -20,6 +20,6 @@ class LanggraphPlatformServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigration('create_langgraph_platform_php_table')
-            ->hasCommand(LanggraphPlatformCommand::class);
+            ->hasCommand(LangGraphPlatformCommand::class);
     }
 }

@@ -1,16 +1,16 @@
 <?php
 
-namespace LanggraphPlatform\Facades;
+namespace LangGraphPlatform\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \LanggraphPlatform\LanggraphPlatform
+ * @see \LangGraphPlatform\LangGraphPlatform
  */
-class LanggraphPlatform extends Facade
+class LangGraphPlatform extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \LanggraphPlatform\LanggraphPlatform::class;
+        return \LangGraphPlatform\LangGraphPlatform::class;
     }
 }

@@ -34,13 +34,13 @@
     },
     "autoload": {
         "psr-4": {
-            "LanggraphPlatform\\": "src/",
-            "LanggraphPlatform\\Database\\Factories\\": "database/factories/"
+            "LangGraphPlatform\\": "src/",
+            "LangGraphPlatform\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "LanggraphPlatform\\Tests\\": "tests/",
+            "LangGraphPlatform\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -62,10 +62,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LanggraphPlatform\\LanggraphPlatformServiceProvider"
+                "LangGraphPlatform\\LangGraphPlatformServiceProvider"
             ],
             "aliases": {
-                "LanggraphPlatform": "LanggraphPlatform\\Facades\\LanggraphPlatform"
+                "LangGraphPlatform": "LangGraphPlatform\\Facades\\LangGraphPlatform"
             }
         }
     },

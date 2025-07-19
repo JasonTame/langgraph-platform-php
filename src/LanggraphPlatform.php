@@ -1,5 +1,5 @@
 <?php
 
-namespace LanggraphPlatform;
+namespace LangGraphPlatform;
 
-class LanggraphPlatform {}
+class LangGraphPlatform {}

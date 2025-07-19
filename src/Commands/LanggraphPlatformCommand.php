@@ -1,10 +1,10 @@
 <?php
 
-namespace LanggraphPlatform\Commands;
+namespace LangGraphPlatform\Commands;
 
 use Illuminate\Console\Command;
 
-class LanggraphPlatformCommand extends Command
+class LangGraphPlatformCommand extends Command
 {
     public $signature = 'langgraph-platform-php';
 

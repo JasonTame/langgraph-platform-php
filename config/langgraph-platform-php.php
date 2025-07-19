@@ -1,4 +1,4 @@
 <?php
 
-// config for LanggraphPlatform
+// config for LangGraphPlatform
 return [];
