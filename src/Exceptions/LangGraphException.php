@@ -13,7 +13,9 @@ use Psr\Http\Message\ResponseInterface;
 class LangGraphException extends Exception
 {
     protected ?ResponseInterface $response = null;
+
     protected array $responseData = [];
+
     protected ?string $errorType = null;
 
     public function __construct(
@@ -59,6 +61,7 @@ class LangGraphException extends Exception
     public function setErrorType(?string $errorType): self
     {
         $this->errorType = $errorType;
+
         return $this;
     }
 

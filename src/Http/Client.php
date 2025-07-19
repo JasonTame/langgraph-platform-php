@@ -23,7 +23,9 @@ use Psr\Http\Message\StreamInterface;
 class Client
 {
     private GuzzleClient $client;
+
     private array $config;
+
     private int $retryCount = 0;
 
     public function __construct(array $config = [])
@@ -59,7 +61,7 @@ class Client
         ));
 
         return new GuzzleClient([
-            'base_uri' => rtrim($this->config['base_url'], '/') . '/',
+            'base_uri' => rtrim($this->config['base_url'], '/').'/',
             'timeout' => $this->config['timeout'],
             'connect_timeout' => $this->config['connect_timeout'],
             'verify' => $this->config['verify_ssl'],
@@ -220,7 +222,7 @@ class Client
                 RequestOptions::STREAM => true,
             ];
 
-            if ($method === 'POST' && !empty($data)) {
+            if ($method === 'POST' && ! empty($data)) {
                 $options[RequestOptions::JSON] = $data;
             }
 
@@ -240,7 +242,7 @@ class Client
     {
         $buffer = '';
 
-        while (!$body->eof()) {
+        while (! $body->eof()) {
             $chunk = $body->read(1024);
             if ($chunk === '') {
                 continue;
@@ -261,7 +263,7 @@ class Client
         }
 
         // Process any remaining buffer
-        if (!empty($buffer)) {
+        if (! empty($buffer)) {
             $event = $this->parseEventStreamLine($buffer);
             if ($event !== null) {
                 yield $event;
@@ -323,7 +325,7 @@ class Client
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new LangGraphException(
-                'Failed to decode JSON response: ' . json_last_error_msg(),
+                'Failed to decode JSON response: '.json_last_error_msg(),
                 $response->getStatusCode(),
                 null,
                 $response

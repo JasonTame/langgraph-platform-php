@@ -88,9 +88,9 @@ class RunsClient
     public function stream(string $threadId, array $params, ?callable $callback = null): \Generator
     {
         $streamParams = array_merge($params, ['stream' => true]);
-        
+
         $stream = $this->httpClient->stream("threads/{$threadId}/runs", 'POST', $streamParams);
-        
+
         foreach ($stream as $event) {
             if ($callback !== null) {
                 $callback($event);
@@ -105,9 +105,9 @@ class RunsClient
     public function streamStateless(array $params, ?callable $callback = null): \Generator
     {
         $streamParams = array_merge($params, ['stream' => true]);
-        
+
         $stream = $this->httpClient->stream('runs', 'POST', $streamParams);
-        
+
         foreach ($stream as $event) {
             if ($callback !== null) {
                 $callback($event);
@@ -126,7 +126,7 @@ class RunsClient
 
         while (true) {
             $currentRun = $this->get($threadId, $runId);
-            
+
             if (in_array($currentRun['status'], ['success', 'error', 'cancelled', 'failed'])) {
                 return $currentRun;
             }
@@ -146,7 +146,7 @@ class RunsClient
         while (true) {
             // For stateless runs, we need to check via a different endpoint
             $currentRun = $this->getStateless($runId);
-            
+
             if (in_array($currentRun['status'], ['success', 'error', 'cancelled', 'failed'])) {
                 return $currentRun;
             }
@@ -177,7 +177,7 @@ class RunsClient
     public function joinStream(string $threadId, string $runId, ?callable $callback = null): \Generator
     {
         $stream = $this->httpClient->stream("threads/{$threadId}/runs/{$runId}/stream", 'GET');
-        
+
         foreach ($stream as $event) {
             if ($callback !== null) {
                 $callback($event);
@@ -185,4 +185,4 @@ class RunsClient
             yield $event;
         }
     }
-} 
+}

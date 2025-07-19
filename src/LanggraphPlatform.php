@@ -6,10 +6,10 @@ namespace LangGraphPlatform;
 
 use LangGraphPlatform\Http\Client as HttpClient;
 use LangGraphPlatform\Resources\AssistantsClient;
-use LangGraphPlatform\Resources\ThreadsClient;
-use LangGraphPlatform\Resources\RunsClient;
 use LangGraphPlatform\Resources\CronsClient;
+use LangGraphPlatform\Resources\RunsClient;
 use LangGraphPlatform\Resources\StoreClient;
+use LangGraphPlatform\Resources\ThreadsClient;
 
 /**
  * Main LangGraph Platform SDK client.
@@ -17,10 +17,15 @@ use LangGraphPlatform\Resources\StoreClient;
 class LangGraphPlatform
 {
     private HttpClient $httpClient;
+
     private AssistantsClient $assistants;
+
     private ThreadsClient $threads;
+
     private RunsClient $runs;
+
     private CronsClient $crons;
+
     private StoreClient $store;
 
     public function __construct(?array $config = null)
@@ -100,6 +105,7 @@ class LangGraphPlatform
     public function configure(array $config): self
     {
         $this->httpClient->configure($config);
+
         return $this;
     }
 

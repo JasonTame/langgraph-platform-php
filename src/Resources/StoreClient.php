@@ -137,6 +137,7 @@ class StoreClient
     {
         try {
             $this->get($namespace, $key);
+
             return true;
         } catch (\Exception $e) {
             return false;
@@ -156,6 +157,7 @@ class StoreClient
                 $items[$key] = null;
             }
         }
+
         return $items;
     }
 
@@ -168,6 +170,7 @@ class StoreClient
         foreach ($items as $key => $value) {
             $results[$key] = $this->put($namespace, $key, $value);
         }
+
         return $results;
     }
 }

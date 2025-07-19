@@ -29,7 +29,7 @@ class LangGraphPlatformServiceProvider extends PackageServiceProvider
     {
         // Register the main LangGraph Platform client as a singleton
         $this->app->singleton(LangGraphPlatform::class, function ($app) {
-            return new LangGraphPlatform();
+            return new LangGraphPlatform;
         });
 
         // Bind the client to the container using the interface if needed
