@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-
-
 it('can put a value in store', function () {
     $namespace = 'test-namespace';
     $key = 'test-key';

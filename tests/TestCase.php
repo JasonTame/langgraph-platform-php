@@ -15,6 +15,7 @@ use Orchestra\Testbench\TestCase as Orchestra;
 class TestCase extends Orchestra
 {
     protected MockHandler $mockHandler;
+
     protected LangGraphPlatform $client;
 
     protected function setUp(): void
@@ -40,7 +41,7 @@ class TestCase extends Orchestra
 
     protected function setupMockHttpClient(): void
     {
-        $this->mockHandler = new MockHandler();
+        $this->mockHandler = new MockHandler;
     }
 
     protected function setupLangGraphClient(): void

@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-
-
 it('can create a thread', function () {
     $threadData = [
         'metadata' => ['key' => 'value'],

@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-
-
 it('can create a run on a thread', function () {
     $threadId = 'thread_123';
     $runData = [

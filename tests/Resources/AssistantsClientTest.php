@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-
-
 it('can create an assistant', function () {
     $assistantData = [
         'graph_id' => 'test-graph',

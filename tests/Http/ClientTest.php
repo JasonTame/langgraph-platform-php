@@ -58,28 +58,28 @@ it('can make delete request', function () {
 it('throws unauthorized exception for 401 errors', function () {
     $this->mockErrorResponse(401, 'Unauthorized');
 
-    expect(fn() => $this->client->getHttpClient()->get('test'))
+    expect(fn () => $this->client->getHttpClient()->get('test'))
         ->toThrow(UnauthorizedException::class);
 });
 
 it('throws bad request exception for 400 errors', function () {
     $this->mockErrorResponse(400, 'Bad Request');
 
-    expect(fn() => $this->client->getHttpClient()->get('test'))
+    expect(fn () => $this->client->getHttpClient()->get('test'))
         ->toThrow(BadRequestException::class);
 });
 
 it('throws not found exception for 404 errors', function () {
     $this->mockErrorResponse(404, 'Not Found');
 
-    expect(fn() => $this->client->getHttpClient()->get('test'))
+    expect(fn () => $this->client->getHttpClient()->get('test'))
         ->toThrow(NotFoundException::class);
 });
 
 it('throws generic exception for other errors', function () {
     $this->mockErrorResponse(500, 'Internal Server Error');
 
-    expect(fn() => $this->client->getHttpClient()->get('test'))
+    expect(fn () => $this->client->getHttpClient()->get('test'))
         ->toThrow(LangGraphException::class);
 });
 
@@ -115,6 +115,6 @@ it('can handle streaming responses', function () {
     };
 
     // This will test the stream method exists and is callable
-    expect(fn() => $this->client->getHttpClient()->stream('GET', 'test', [], $callback))
+    expect(fn () => $this->client->getHttpClient()->stream('GET', 'test', [], $callback))
         ->not->toThrow(Exception::class);
 });

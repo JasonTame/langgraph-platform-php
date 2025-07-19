@@ -120,7 +120,7 @@ class ThreadsClient
     public function getState(string $threadId, array $params = []): array
     {
         $queryParams = http_build_query($params);
-        $endpoint = "threads/{$threadId}/state" . ($queryParams ? "?{$queryParams}" : '');
+        $endpoint = "threads/{$threadId}/state".($queryParams ? "?{$queryParams}" : '');
 
         return $this->httpClient->get($endpoint);
     }
@@ -131,7 +131,7 @@ class ThreadsClient
     public function getHistory(string $threadId, array $params = []): array
     {
         $queryParams = http_build_query($params);
-        $endpoint = "threads/{$threadId}/history" . ($queryParams ? "?{$queryParams}" : '');
+        $endpoint = "threads/{$threadId}/history".($queryParams ? "?{$queryParams}" : '');
 
         return $this->httpClient->get($endpoint);
     }

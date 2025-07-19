@@ -21,7 +21,7 @@ it('can be instantiated with config', function () {
 });
 
 it('can be instantiated without config', function () {
-    $client = new LangGraphPlatform();
+    $client = new LangGraphPlatform;
 
     expect($client)->toBeInstanceOf(LangGraphPlatform::class);
 });
@@ -46,7 +46,7 @@ it('provides access to resource clients', function () {
 });
 
 it('can be configured after instantiation', function () {
-    $client = new LangGraphPlatform();
+    $client = new LangGraphPlatform;
 
     $newConfig = ['api_key' => 'new-key'];
     $configuredClient = $client->configure($newConfig);
