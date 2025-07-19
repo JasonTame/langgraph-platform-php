@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Jason Tame\LanggraphPlatform\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LanggraphPlatformCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'langgraph-platform-php';
 
     public $description = 'My command';
 
