@@ -26,8 +26,6 @@ class Client
 
     private array $config;
 
-    private int $retryCount = 0;
-
     public function __construct(array $config = [])
     {
         $this->config = array_merge([
@@ -61,7 +59,7 @@ class Client
         ));
 
         return new GuzzleClient([
-            'base_uri' => rtrim($this->config['base_url'], '/').'/',
+            'base_uri' => rtrim($this->config['base_url'], '/') . '/',
             'timeout' => $this->config['timeout'],
             'connect_timeout' => $this->config['connect_timeout'],
             'verify' => $this->config['verify_ssl'],
@@ -278,7 +276,7 @@ class Client
     {
         $line = trim($line);
 
-        if (empty($line) || $line === '') {
+        if (empty($line)) {
             return null;
         }
 
@@ -325,7 +323,7 @@ class Client
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new LangGraphException(
-                'Failed to decode JSON response: '.json_last_error_msg(),
+                'Failed to decode JSON response: ' . json_last_error_msg(),
                 $response->getStatusCode(),
                 null,
                 $response
