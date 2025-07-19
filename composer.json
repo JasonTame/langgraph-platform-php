@@ -1,10 +1,14 @@
 {
     "name": "jasontame/langgraph-platform-php",
-    "description": "An unoffical PHP SDK for interacting with the LangGraph Platform API.",
+    "description": "An unofficial PHP SDK for interacting with the LangGraph Platform API.",
     "keywords": [
         "Jason Tame",
         "laravel",
-        "langgraph-platform-php"
+        "langgraph-platform-php",
+        "langgraph",
+        "ai",
+        "agents",
+        "langchain"
     ],
     "homepage": "https://github.com/jasontame/langgraph-platform-php",
     "license": "MIT",
@@ -18,7 +22,10 @@
     "require": {
         "php": "^8.3",
         "spatie/laravel-package-tools": "^1.16",
-        "illuminate/contracts": "^10.0||^11.0||^12.0"
+        "illuminate/contracts": "^10.0||^11.0||^12.0",
+        "guzzlehttp/guzzle": "^7.8",
+        "psr/http-message": "^2.0",
+        "psr/http-client": "^1.0"
     },
     "require-dev": {
         "laravel/pint": "^1.14",
