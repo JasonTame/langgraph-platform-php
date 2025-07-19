@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace LangGraphPlatform;
+namespace JasonTame\LangGraphClient;
 
-use LangGraphPlatform\Commands\LangGraphPlatformCommand;
+use JasonTame\LangGraphClient\Commands\LangGraphClientCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class LangGraphPlatformServiceProvider extends PackageServiceProvider
+class LangGraphClientServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -18,23 +18,23 @@ class LangGraphPlatformServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('langgraph-platform-php')
+            ->name('langgraph-client-php')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_langgraph_platform_php_table')
-            ->hasCommand(LangGraphPlatformCommand::class);
+            ->hasMigration('create_langgraph_client_php_table')
+            ->hasCommand(LangGraphClientCommand::class);
     }
 
     public function registeringPackage(): void
     {
-        // Register the main LangGraph Platform client as a singleton
-        $this->app->singleton(LangGraphPlatform::class, function ($app) {
-            return new LangGraphPlatform;
+        // Register the main LangGraph Client as a singleton
+        $this->app->singleton(LangGraphClient::class, function ($app) {
+            return new LangGraphClient;
         });
 
         // Bind the client to the container using the interface if needed
-        $this->app->bind('langgraph-platform', function ($app) {
-            return $app->make(LangGraphPlatform::class);
+        $this->app->bind('langgraph-client', function ($app) {
+            return $app->make(LangGraphClient::class);
         });
     }
 

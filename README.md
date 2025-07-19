@@ -1,11 +1,11 @@
-# LangGraph Platform PHP SDK
+# LangGraph Client for PHP
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/jasontame/langgraph-platform-php.svg?style=flat-square)](https://packagist.org/packages/jasontame/langgraph-platform-php)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jasontame/langgraph-platform-php/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jasontame/langgraph-platform-php/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jasontame/langgraph-platform-php/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/jasontame/langgraph-platform-php/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/jasontame/langgraph-platform-php.svg?style=flat-square)](https://packagist.org/packages/jasontame/langgraph-platform-php)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/jasontame/langgraph-client-php.svg?style=flat-square)](https://packagist.org/packages/jasontame/langgraph-client-php)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jasontame/langgraph-client-php/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jasontame/langgraph-client-php/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jasontame/langgraph-client-php/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/jasontame/langgraph-client-php/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/jasontame/langgraph-client-php.svg?style=flat-square)](https://packagist.org/packages/jasontame/langgraph-client-php)
 
-An unofficial PHP SDK for interacting with the [LangGraph Platform API](https://langchain-ai.github.io/langgraph/cloud/reference/api/api_ref.html). This package provides a clean, Laravel-friendly interface for building AI agents and workflows using LangGraph's powerful platform.
+An unofficial PHP client SDK for interacting with the [LangGraph Platform API](https://langchain-ai.github.io/langgraph/cloud/reference/api/api_ref.html). This package provides a clean, Laravel-friendly interface for building AI agents and workflows using LangGraph's powerful platform.
 
 ## Features
 
@@ -22,7 +22,7 @@ An unofficial PHP SDK for interacting with the [LangGraph Platform API](https://
 Install the package via Composer:
 
 ```bash
-composer require jasontame/langgraph-platform-php
+composer require jasontame/langgraph-client-php
 ```
 
 ### Laravel Setup
@@ -30,7 +30,7 @@ composer require jasontame/langgraph-platform-php
 Publish the configuration file:
 
 ```bash
-php artisan vendor:publish --tag="langgraph-platform-php-config"
+php artisan vendor:publish --tag="langgraph-client-php-config"
 ```
 
 Add your LangGraph Platform API credentials to your `.env` file:
@@ -51,10 +51,10 @@ LANGGRAPH_BASE_URL=http://localhost:8124
 ### Using the Facade (Laravel)
 
 ```php
-use LangGraphPlatform\Facades\LangGraphPlatform;
+use JasonTame\LangGraphClient\Facades\LangGraphClient;
 
 // Create an assistant
-$assistant = LangGraphPlatform::assistants()->create([
+$assistant = LangGraphClient::assistants()->create([
     'graph_id' => 'my-graph',
     'name' => 'My Assistant',
     'config' => ['recursion_limit' => 10],
@@ -62,12 +62,12 @@ $assistant = LangGraphPlatform::assistants()->create([
 ]);
 
 // Create a thread
-$thread = LangGraphPlatform::threads()->create([
+$thread = LangGraphClient::threads()->create([
     'metadata' => ['user_id' => 'user123']
 ]);
 
 // Run the assistant
-$run = LangGraphPlatform::runs()->create($thread['thread_id'], [
+$run = LangGraphClient::runs()->create($thread['thread_id'], [
     'assistant_id' => $assistant['assistant_id'],
     'input' => ['message' => 'Hello, world!']
 ]);
@@ -78,10 +78,10 @@ echo "Run status: " . $run['status'];
 ### Using the Client Directly
 
 ```php
-use LangGraphPlatform\LangGraphPlatform;
+use JasonTame\LangGraphClient\LangGraphClient;
 
 // Create client instance
-$client = new LangGraphPlatform([
+$client = new LangGraphClient([
     'api_key' => 'your-api-key',
     'base_url' => 'https://api.langchain.com',
     'timeout' => 30,
@@ -89,7 +89,7 @@ $client = new LangGraphPlatform([
 ]);
 
 // Or use environment variables
-$client = LangGraphPlatform::fromEnvironment();
+$client = LangGraphClient::fromEnvironment();
 ```
 
 ## Configuration
@@ -106,7 +106,7 @@ The SDK can be configured using environment variables:
 ### Client Configuration
 
 ```php
-$client = new LangGraphPlatform([
+$client = new LangGraphClient([
     'api_key' => 'your-api-key',
     'base_url' => 'https://custom-api.example.com',
     'timeout' => 60,
@@ -317,9 +317,9 @@ $client->runs()->createStateless([
 The SDK provides specific exception classes for different API errors:
 
 ```php
-use LangGraphPlatform\Exceptions\LangGraphException;
-use LangGraphPlatform\Exceptions\NotFound Exception;
-use LangGraphPlatform\Exceptions\UnauthorizedException;
+use JasonTame\LangGraphClient\Exceptions\LangGraphException;
+use JasonTame\LangGraphClient\Exceptions\NotFoundException;
+use JasonTame\LangGraphClient\Exceptions\UnauthorizedException;
 
 try {
     $assistant = $client->assistants()->find('nonexistent-id');

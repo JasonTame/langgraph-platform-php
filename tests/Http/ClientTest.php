@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use LangGraphPlatform\Exceptions\BadRequestException;
-use LangGraphPlatform\Exceptions\LangGraphException;
-use LangGraphPlatform\Exceptions\NotFoundException;
-use LangGraphPlatform\Exceptions\UnauthorizedException;
+use JasonTame\LangGraphClient\Exceptions\BadRequestException;
+use JasonTame\LangGraphClient\Exceptions\LangGraphException;
+use JasonTame\LangGraphClient\Exceptions\NotFoundException;
+use JasonTame\LangGraphClient\Exceptions\UnauthorizedException;
 
 it('can make get request', function () {
     $responseData = ['success' => true];

@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace LangGraphPlatform;
+namespace JasonTame\LangGraphClient;
 
-use LangGraphPlatform\Http\Client as HttpClient;
-use LangGraphPlatform\Resources\AssistantsClient;
-use LangGraphPlatform\Resources\CronsClient;
-use LangGraphPlatform\Resources\RunsClient;
-use LangGraphPlatform\Resources\StoreClient;
-use LangGraphPlatform\Resources\ThreadsClient;
+use JasonTame\LangGraphClient\Http\Client as HttpClient;
+use JasonTame\LangGraphClient\Resources\AssistantsClient;
+use JasonTame\LangGraphClient\Resources\CronsClient;
+use JasonTame\LangGraphClient\Resources\RunsClient;
+use JasonTame\LangGraphClient\Resources\StoreClient;
+use JasonTame\LangGraphClient\Resources\ThreadsClient;
 
 /**
- * Main LangGraph Platform SDK client.
+ * Main LangGraph Client SDK.
  */
-class LangGraphPlatform
+class LangGraphClient
 {
     private HttpClient $httpClient;
 
@@ -32,7 +32,7 @@ class LangGraphPlatform
     {
         // Get configuration from Laravel config if not provided
         if ($config === null) {
-            $config = config('langgraph-platform-php', []);
+            $config = config('langgraph-client-php', []);
         }
 
         $this->httpClient = new HttpClient($config);

@@ -16,7 +16,7 @@
     backupStaticProperties="false"
 >
     <testsuites>
-        <testsuite name="LangGraph Platform Test Suite">
+        <testsuite name="LangGraph Client Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

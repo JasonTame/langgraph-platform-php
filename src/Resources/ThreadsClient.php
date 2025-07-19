@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LangGraphPlatform\Resources;
+namespace JasonTame\LangGraphClient\Resources;
 
-use LangGraphPlatform\Http\Client;
+use JasonTame\LangGraphClient\Http\Client;
 
 /**
  * Client for managing threads in LangGraph Platform.

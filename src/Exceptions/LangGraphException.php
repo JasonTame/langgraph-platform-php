@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LangGraphPlatform\Exceptions;
+namespace JasonTame\LangGraphClient\Exceptions;
 
 use Exception;
 use Psr\Http\Message\ResponseInterface;

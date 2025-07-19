@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-use LangGraphPlatform\LangGraphPlatform;
-use LangGraphPlatform\Resources\AssistantsClient;
-use LangGraphPlatform\Resources\CronsClient;
-use LangGraphPlatform\Resources\RunsClient;
-use LangGraphPlatform\Resources\StoreClient;
-use LangGraphPlatform\Resources\ThreadsClient;
+use JasonTame\LangGraphClient\LangGraphClient;
+use JasonTame\LangGraphClient\Resources\AssistantsClient;
+use JasonTame\LangGraphClient\Resources\CronsClient;
+use JasonTame\LangGraphClient\Resources\RunsClient;
+use JasonTame\LangGraphClient\Resources\StoreClient;
+use JasonTame\LangGraphClient\Resources\ThreadsClient;
 
 it('can be instantiated with config', function () {
     $config = [
@@ -15,28 +15,28 @@ it('can be instantiated with config', function () {
         'base_url' => 'https://test.com',
     ];
 
-    $client = new LangGraphPlatform($config);
+    $client = new LangGraphClient($config);
 
-    expect($client)->toBeInstanceOf(LangGraphPlatform::class);
+    expect($client)->toBeInstanceOf(LangGraphClient::class);
 });
 
 it('can be instantiated without config', function () {
-    $client = new LangGraphPlatform;
+    $client = new LangGraphClient;
 
-    expect($client)->toBeInstanceOf(LangGraphPlatform::class);
+    expect($client)->toBeInstanceOf(LangGraphClient::class);
 });
 
 it('can create client from environment', function () {
     putenv('LANGGRAPH_API_KEY=env-test-key');
     putenv('LANGGRAPH_BASE_URL=https://env.test.com');
 
-    $client = LangGraphPlatform::fromEnvironment();
+    $client = LangGraphClient::fromEnvironment();
 
-    expect($client)->toBeInstanceOf(LangGraphPlatform::class);
+    expect($client)->toBeInstanceOf(LangGraphClient::class);
 });
 
 it('provides access to resource clients', function () {
-    $client = new LangGraphPlatform(['api_key' => 'test']);
+    $client = new LangGraphClient(['api_key' => 'test']);
 
     expect($client->assistants())->toBeInstanceOf(AssistantsClient::class);
     expect($client->threads())->toBeInstanceOf(ThreadsClient::class);
@@ -46,16 +46,16 @@ it('provides access to resource clients', function () {
 });
 
 it('can be configured after instantiation', function () {
-    $client = new LangGraphPlatform;
+    $client = new LangGraphClient;
 
     $newConfig = ['api_key' => 'new-key'];
     $configuredClient = $client->configure($newConfig);
 
-    expect($configuredClient)->toBeInstanceOf(LangGraphPlatform::class);
+    expect($configuredClient)->toBeInstanceOf(LangGraphClient::class);
 });
 
 it('has http client accessor', function () {
-    $client = new LangGraphPlatform(['api_key' => 'test']);
+    $client = new LangGraphClient(['api_key' => 'test']);
 
-    expect($client->getHttpClient())->toBeInstanceOf(\LangGraphPlatform\Http\Client::class);
+    expect($client->getHttpClient())->toBeInstanceOf(\JasonTame\LangGraphClient\Http\Client::class);
 });

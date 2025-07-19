@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LangGraphPlatform\Exceptions;
+namespace JasonTame\LangGraphClient\Exceptions;
 
 /**
  * Exception thrown for 409 Conflict errors.

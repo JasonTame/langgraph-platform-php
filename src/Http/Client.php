@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LangGraphPlatform\Http;
+namespace JasonTame\LangGraphClient\Http;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\ClientException;
@@ -13,7 +13,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use LangGraphPlatform\Exceptions\LangGraphException;
+use JasonTame\LangGraphClient\Exceptions\LangGraphException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 

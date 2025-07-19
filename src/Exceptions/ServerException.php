@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LangGraphPlatform\Exceptions;
+namespace JasonTame\LangGraphClient\Exceptions;
 
 /**
- * Exception thrown for 500+ Server errors.
+ * Exception thrown for 5xx Server errors.
  */
 class ServerException extends LangGraphException
 {
