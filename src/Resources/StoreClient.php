@@ -173,4 +173,12 @@ class StoreClient
 
         return $results;
     }
+
+    /**
+     * Perform batch operations on the store.
+     */
+    public function batch(array $operations): array
+    {
+        return $this->httpClient->post('store/batch', ['operations' => $operations]);
+    }
 }

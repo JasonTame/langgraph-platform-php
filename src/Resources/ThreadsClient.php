@@ -113,4 +113,26 @@ class ThreadsClient
     {
         return $this->httpClient->get("threads/{$threadId}/messages", $params);
     }
+
+    /**
+     * Get the current state of a thread.
+     */
+    public function getState(string $threadId, array $params = []): array
+    {
+        $queryParams = http_build_query($params);
+        $endpoint = "threads/{$threadId}/state" . ($queryParams ? "?{$queryParams}" : '');
+
+        return $this->httpClient->get($endpoint);
+    }
+
+    /**
+     * Get the history of a thread.
+     */
+    public function getHistory(string $threadId, array $params = []): array
+    {
+        $queryParams = http_build_query($params);
+        $endpoint = "threads/{$threadId}/history" . ($queryParams ? "?{$queryParams}" : '');
+
+        return $this->httpClient->get($endpoint);
+    }
 }
